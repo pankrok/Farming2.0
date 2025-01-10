@@ -401,6 +401,7 @@ radius = 5.0
 radius = 4.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_do7iy")
 current_tool = 1
@@ -430,6 +431,7 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("5_d64kc")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+speed = 100
 
 [node name="Chopping" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_collision_shape")]
 script = ExtResource("7_p8u5v")
@@ -448,6 +450,7 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="HitComponent" parent="." instance=ExtResource("10_n5apb")]
+current_tool = 1
 
 [node name="HitComponentCollisionShape" type="CollisionShape2D" parent="HitComponent"]
 position = Vector2(11, 0)

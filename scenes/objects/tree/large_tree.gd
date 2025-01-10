@@ -14,8 +14,11 @@ func on_hurt(hit_damage: int):
 	print ("HIT")
 	damage_component.apply_damage(hit_damage)
 	material.set_shader_parameter("shake_intensivity", 1.0)
+	print(material.get_shader_parameter("shake_intensivity"))
 	await get_tree().create_timer(1.0).timeout
 	material.set_shader_parameter("shake_intensivity", 0.0)
+	print ("timeout")
+	print(material.get_shader_parameter("shake_intensivity"))
 
 func  on_max_damage_reached():
 	call_deferred("add_log_scene")
